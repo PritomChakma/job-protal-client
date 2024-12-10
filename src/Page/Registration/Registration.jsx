@@ -9,6 +9,9 @@ const Registration = () => {
     const password = form.password.value;
     const user = { email, password };
     console.log(user);
+
+
+    // Password validation (My Work)
   };
 
   return (

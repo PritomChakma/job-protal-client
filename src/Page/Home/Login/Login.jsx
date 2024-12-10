@@ -1,22 +1,17 @@
 import Lottie from "lottie-react";
-import { useContext } from "react";
-import lottieData from "../../assets/Lottifie/registration.json";
-import AuthContext from "../../Context/AuthContext";
-
-const Registration = () => {
-  const { createUser } = useContext(AuthContext);
-  const handleRegistration = (e) => {
+import React, { useContext } from "react";
+import login from "../../../assets/Lottifie/login.json";
+import AuthContext from "../../../Context/AuthContext";
+const Login = () => {
+  const { signInUser } = useContext(AuthContext);
+  const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
     const user = { email, password };
     console.log(user);
-
-    // Password validation (My Work)
-
-    // create user
-    createUser(email, password)
+    signInUser(email, password)
       .then((result) => {
         console.log(result.user);
       })
@@ -29,13 +24,11 @@ const Registration = () => {
     <div className="hero  min-h-screen">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="text-center lg:text-left w-96">
-          <Lottie animationData={lottieData}></Lottie>
+          <Lottie animationData={login}></Lottie>
         </div>
         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-          <h1 className="text-3xl font-bold text-center py-5">
-            Registration Now
-          </h1>
-          <form onSubmit={handleRegistration} className="card-body">
+          <h1 className="text-3xl font-bold text-center py-5">Login Now</h1>
+          <form onSubmit={handleLogin} className="card-body">
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Email</span>
@@ -66,7 +59,7 @@ const Registration = () => {
               </label>
             </div>
             <div className="form-control mt-6">
-              <button className="btn btn-primary">Registration</button>
+              <button className="btn btn-primary">Login</button>
             </div>
           </form>
         </div>
@@ -75,4 +68,4 @@ const Registration = () => {
   );
 };
 
-export default Registration;
+export default Login;

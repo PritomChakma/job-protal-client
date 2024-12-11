@@ -1,6 +1,7 @@
 import Lottie from "lottie-react";
 import { useContext } from "react";
 import lottieData from "../../assets/Lottifie/registration.json";
+import SigninGoogle from "../../Components/Common/SigninGoogle";
 import AuthContext from "../../Context/AuthContext";
 
 const Registration = () => {
@@ -69,6 +70,7 @@ const Registration = () => {
               <button className="btn btn-primary">Registration</button>
             </div>
           </form>
+          <SigninGoogle></SigninGoogle>
         </div>
       </div>
     </div>

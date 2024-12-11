@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import Apply from "../Components/JobApply/Apply";
 import JobDetails from "../Components/JobDetails";
 import MainLayout from "../Layout/MainLayout";
 import Home from "../Page/Home/Home";
@@ -25,6 +26,14 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/jobs/${params.id}`),
+      },
+      {
+        path: "/jobApply/:id",
+        element: (
+          <PrivateRoute>
+            <Apply></Apply>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/registration",

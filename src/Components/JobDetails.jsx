@@ -11,7 +11,7 @@ const JobDetails = () => {
       <div className="md:w-1/2">
         <h1 className="text-xl "><span className="font-semibold mr-2">Title:</span>{job.title}</h1>
         <p className="text-xl"><span className="font-semibold mr-2">Company:</span>{job.company}</p>
-        <p className="text-xl"><span className="font-semibold mr-2">Application Last Date:</span>{job.applicationDeadline}</p>
+        <p className="text-xl"><span className="font-semibold mr-2">Apply Last Date:</span>{job.applicationDeadline}</p>
         <p className="text-xl"><span className="font-semibold mr-2">Hr Name:</span>{job.hr_name}</p>
         <p className="text-xl"><span className="font-semibold mr-2">Hr Email:</span>{job.hr_email}</p>
         <p className="py-6">

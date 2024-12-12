@@ -1,10 +1,12 @@
 import React, { useContext } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import Swal from "sweetalert2";
 import AuthContext from "../../Context/AuthContext";
 
 const Apply = () => {
   const { id } = useParams();
   const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
   console.log(id, user);
 
   const submitJobApply = (e) => {
@@ -14,7 +16,6 @@ const Apply = () => {
     const linkdin = form.linkdin.value;
     const github = form.github.value;
     const resume = form.resume.value;
-
 
     const canditate = { name, linkdin, github, resume };
 
@@ -36,10 +37,15 @@ const Apply = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        if(data.insertedId){
-            
+        if (data.insertedId) {
+          Swal.fire({
+            title: "Job Apply Successfully",
+            text: "You clicked the button!",
+            icon: "success",
+          });
+          navigate("/myApplications");
         }
-  });
+      });
   };
 
   return (

@@ -4,6 +4,7 @@ import JobDetails from "../Components/JobDetails";
 import MainLayout from "../Layout/MainLayout";
 import Home from "../Page/Home/Home";
 import Login from "../Page/Home/Login/Login";
+import MyApplications from "../Page/MyApplications.jsx/MyApplications";
 import Registration from "../Page/Registration/Registration";
 import PrivateRoute from "./PrivateRoute";
 
@@ -32,6 +33,14 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <Apply></Apply>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/myApplications",
+        element: (
+          <PrivateRoute>
+            <MyApplications></MyApplications>
           </PrivateRoute>
         ),
       },

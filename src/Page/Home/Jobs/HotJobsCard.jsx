@@ -17,7 +17,7 @@ const HotJobsCard = ({ job }) => {
   } = job;
   return (
     <div>
-      <div className="card card-compact bg-base-100 shadow-xl">
+      <div className="card card-compact bg-base-100 shadow-xl h-96">
         <div className="flex gap-3 p-4 items-center">
           <figure>
             <img className="w-16" src={company_logo} alt="Shoes" />

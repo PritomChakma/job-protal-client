@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Apply from "../Components/JobApply/Apply";
 import JobDetails from "../Components/JobDetails";
 import MainLayout from "../Layout/MainLayout";
+import AddJob from "../Page/Home/AddJob/AddJob";
 import Home from "../Page/Home/Home";
 import Login from "../Page/Home/Login/Login";
 import MyApplications from "../Page/MyApplications.jsx/MyApplications";
@@ -41,6 +42,14 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <MyApplications></MyApplications>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/addJob",
+        element: (
+          <PrivateRoute>
+            <AddJob></AddJob>
           </PrivateRoute>
         ),
       },
